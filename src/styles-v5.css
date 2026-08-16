@@ -1,0 +1,146 @@
+/* finesse · register=brand · A=near-black+cyan-signal · B=Chinese-editorial+mono-index · C=geometric-center+single-color-seam · D=static-case-reading+bright-tool-feedback · E=precision-grid+portfolio-plates · SOUL=9 SPECTACLE=6 DENSITY=8 */
+
+/* Final visual lock: keep the hero and works chapter continuous without a dark overlay. */
+.home-hero::after { display: none; }
+
+.work-index,
+.work-index.section-pad { background: var(--v4-bg-deep); }
+
+.cover-tools span {
+  opacity: 1;
+  animation: none;
+  filter: none;
+}
+
+.cover-tools img {
+  opacity: 1;
+  filter: none;
+}
+
+.index-heading { min-height: clamp(230px, 18vw, 300px); }
+
+/* The display face has generous font metrics; the generic reveal mask was
+   clipping its lower edge. Keep the reveal movement but remove that mask. */
+.motion-ready .closing-cover h2.reveal,
+.motion-ready .closing-cover h2.reveal.is-visible {
+  clip-path: none;
+  padding-bottom: 0.04em;
+}
+
+@media (min-width: 761px) {
+  .cover-title-wrap { translate: 0 clamp(26px, 3vh, 36px); }
+
+  .education-strip {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+
+  .education-strip > span { justify-self: start; }
+
+  .education-strip > strong {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .education-strip > i { justify-self: end; }
+}
+
+@media (max-width: 760px) {
+  .home-hero,
+  .hero-shell { min-height: max(900px, 100svh); }
+
+  .cover-title-wrap {
+    top: clamp(420px, 48svh, 455px);
+    bottom: auto;
+    padding: 0;
+    translate: none;
+  }
+
+  .cover-info-stack {
+    bottom: 76px;
+    z-index: 8;
+  }
+
+  .cover-character {
+    top: calc(var(--nav-h) + 112px);
+  }
+
+  .cover-tools {
+    bottom: 18px;
+    z-index: 8;
+  }
+
+  .cover-scroll {
+    right: 18px;
+    bottom: 36px;
+  }
+
+  .cover-scroll i {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+  }
+
+  .cover-scroll svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  .about .advantage-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .about .advantage-row,
+  .about .advantage-row:nth-child(n),
+  .about .advantage-row:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    min-height: 0;
+    gap: 0;
+    padding: 22px 20px 20px;
+  }
+
+  .about .advantage-row > span {
+    width: auto;
+    margin: 0 0 20px;
+  }
+
+  .about .advantage-row > div {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about .advantage-row h4 {
+    width: 100%;
+    margin: 0 0 14px;
+    font-size: clamp(23px, 7vw, 30px);
+    line-height: 1.18;
+  }
+
+  .about .advantage-row p {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.75;
+    letter-spacing: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .about .advantage-row > strong {
+    align-self: flex-start;
+    width: auto;
+    max-width: 100%;
+    margin: 18px 0 0;
+    white-space: normal;
+  }
+
+  .about .advantage-row > i { display: none; }
+}

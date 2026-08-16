@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.finesse/
+.playwright-cli/
+.portfolio-server.pid
+output/
+*.local
