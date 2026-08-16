@@ -5,3 +5,5 @@ dist/
 .portfolio-server.pid
 output/
 *.local
+
+.vercel
