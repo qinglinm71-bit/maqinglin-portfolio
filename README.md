@@ -1,5 +1,7 @@
 # 马庆林 · UI/UX Portfolio 2026
 
+在线访问：[maqinglin-portfolio.vercel.app](https://maqinglin-portfolio.vercel.app)
+
 基于 React + Vite 搭建的个人作品集。首页包含独立图素重构封面、六入口作品目录、简介、能力与暗色收尾页；五个项目和动效作品集均拥有独立地址。项目名称、内容与图片顺序来自简历、高清作品集 PDF 与单独提供的顺风车高清图，站内动效使用提供的 MP4 文件。
 
 ## 本地运行
