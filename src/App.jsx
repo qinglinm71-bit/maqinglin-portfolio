@@ -387,9 +387,9 @@ function About() {
 
           <div className="stat-line reveal" aria-label="作品集数据">
             <div><i>01</i><Counter value={3} /><span>年 UI/UX 设计经验</span></div>
-            <div><i>02</i><Counter value={5} /><span>核心项目</span></div>
-            <div><i>03</i><Counter value={64} /><span>项目展示页</span></div>
-            <div><i>04</i><Counter value={14} /><span>动效作品</span></div>
+            <div><i>02</i><Counter value={6} /><span>核心项目</span></div>
+            <div><i>03</i><Counter value={72} /><span>项目展示页</span></div>
+            <div><i>04</i><Counter value={22} /><span>动效作品</span></div>
           </div>
         </section>
       </div>
@@ -453,8 +453,14 @@ function WorkIndex({ navigate, openDetail }) {
     <section className="work-index section-pad" id="works" data-section data-nav="works" aria-labelledby="works-title">
       <div className="content-shell">
         <div className="index-heading reveal">
-          <h2 id="works-title">作品目录</h2>
-          <p>五个真实项目与一个动效作品集。每个入口均为独立页面，可随时返回目录。</p>
+          <div className="index-heading-title">
+            <h2 id="works-title">作品目录</h2>
+            <div className="index-explore-cue" aria-hidden="true">
+              <span>点击项目 · 查看完整案例</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
+            </div>
+          </div>
+          <p>六个真实项目与一个动效作品集。每个入口均为独立页面，可随时返回目录。</p>
         </div>
 
         <div className="project-window-list">
@@ -605,6 +611,21 @@ function DetailFooter({ currentId, navigate, onBack, fromHome }) {
   const next = entries[(currentIndex + 1) % entries.length]
   const entryPath = (entry) => (entry.id === 'motion' ? '/motion' : `/project/${entry.id}`)
 
+  const ArrowIcon = ({ direction = 'right' }) => (
+    <svg className={`detail-nav-icon detail-nav-icon--${direction}`} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  )
+
+  const DirectoryIcon = () => (
+    <svg className="detail-nav-icon detail-nav-icon--grid" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="4" width="6" height="6" rx="1" />
+      <rect x="14" y="4" width="6" height="6" rx="1" />
+      <rect x="4" y="14" width="6" height="6" rx="1" />
+      <rect x="14" y="14" width="6" height="6" rx="1" />
+    </svg>
+  )
+
   return (
     <section className="detail-footer" aria-label="项目浏览导航">
       <RoutedLink
@@ -616,9 +637,9 @@ function DetailFooter({ currentId, navigate, onBack, fromHome }) {
       >
         <span>上一个项目</span>
         <strong>{previous.title}</strong>
-        <i>←</i>
+        <i><ArrowIcon direction="left" /></i>
       </RoutedLink>
-      <button type="button" className="detail-directory" onClick={onBack}><span>返回作品目录</span><i>⌂</i></button>
+      <button type="button" className="detail-directory" onClick={onBack}><span>返回作品目录</span><i><DirectoryIcon /></i></button>
       <RoutedLink
         to={entryPath(next)}
         navigate={navigate}
@@ -628,7 +649,7 @@ function DetailFooter({ currentId, navigate, onBack, fromHome }) {
       >
         <span>下一个项目</span>
         <strong>{next.title}</strong>
-        <i>↗</i>
+        <i><ArrowIcon /></i>
       </RoutedLink>
     </section>
   )
@@ -640,19 +661,20 @@ function MotionDetail() {
 
   return (
     <section className="motion-section motion-section--standalone" data-section data-nav="works" aria-labelledby="motion-title">
-      <div className="motion-case-intro content-shell">
-        <div className="case-kicker reveal"><span>{motionEntry.category}</span><span>14 MOTION STUDIES</span></div>
-        <div className="motion-case-title">
-          <div className="reveal"><p>Motion Design Showcase</p><h1 id="motion-title">{motionEntry.title}</h1></div>
-          <p className="reveal">{motionEntry.summary}</p>
+      <div className="case-intro content-shell">
+        <div className="case-kicker reveal"><span>{motionEntry.category}</span><span>{motionItems.length} MOTION STUDIES</span></div>
+        <div className="case-title-grid">
+          <div className="reveal"><p className="case-english">Motion Design Showcase</p><h1 id="motion-title">{motionEntry.title}</h1></div>
+          <p className="case-summary reveal">{motionEntry.summary}</p>
         </div>
         <div className="case-scope reveal">{motionEntry.scope.map((item) => <span key={item}>{item}</span>)}</div>
-        <span className="case-index" aria-hidden="true">06</span>
+        <div className="case-read-cue reveal" aria-hidden="true"><span>向下浏览完整案例</span><i /></div>
+        <span className="case-index" aria-hidden="true">07</span>
       </div>
 
       <div className="content-shell motion-gallery">
         <div className="motion-gallery-heading reveal">
-          <h2>主题皮肤与<br />界面动效</h2>
+          <h2>主题皮肤与界面动效</h2>
           <p>视频进入视口后静音循环播放，离开视口自动暂停。点击播放键可手动控制。</p>
         </div>
         <div className="phone-motion-grid">{phone.map((item, index) => <MotionPreview key={item.src} item={item} index={index} />)}</div>
