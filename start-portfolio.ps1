@@ -5,7 +5,7 @@
 $ErrorActionPreference = 'Stop'
 
 $projectRoot = $PSScriptRoot
-$port = 5173
+$port = 5174
 $localUrl = "http://127.0.0.1:$port/"
 $pidFile = Join-Path $projectRoot '.portfolio-server.pid'
 
@@ -71,7 +71,7 @@ try {
   $isPortfolioListener = ($null -ne $listenerProcess) -and ($listenerProcess.Name -eq 'node.exe') -and ($listenerProcess.CommandLine -like "*$projectRoot*") -and ($listenerProcess.CommandLine -like '*vite*')
 
   if (-not $isPortfolioListener) {
-    Show-PortfolioError 'Port 5173 is occupied by another program. The portfolio shortcut did not modify it.'
+    Show-PortfolioError '端口 5174 已被其他程序占用，为避免打开错误页面，未执行启动。'
     exit 1
   }
 

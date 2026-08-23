@@ -5,7 +5,7 @@
 $ErrorActionPreference = 'Stop'
 
 $projectRoot = $PSScriptRoot
-$port = 5173
+$port = 5174
 $pidFile = Join-Path $projectRoot '.portfolio-server.pid'
 
 function Show-PortfolioMessage([string]$message, [string]$icon = 'Information') {
@@ -31,7 +31,7 @@ try {
   $isPortfolioServer = ($null -ne $listenerProcess) -and ($listenerProcess.Name -eq 'node.exe') -and ($listenerProcess.CommandLine -like "*$projectRoot*") -and ($listenerProcess.CommandLine -like '*vite*')
 
   if (-not $isPortfolioServer) {
-    Show-PortfolioMessage '5173 端口属于其他程序，为避免误关，未执行关闭。' 'Warning'
+    Show-PortfolioMessage '端口 5174 属于其他程序，为避免误关，未执行关闭。' 'Warning'
     exit 1
   }
 
