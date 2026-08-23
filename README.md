@@ -1,8 +1,13 @@
 # 马庆林 · UI/UX Portfolio 2026
 
-在线访问：[maqinglin-portfolio.vercel.app](https://maqinglin-portfolio.vercel.app)
+## 在线访问（当前最新版）
 
-基于 React + Vite 搭建的个人作品集。首页包含独立图素重构封面、六入口作品目录、简介、能力与暗色收尾页；五个项目和动效作品集均拥有独立地址。项目名称、内容与图片顺序来自简历、高清作品集 PDF 与单独提供的顺风车高清图，站内动效使用提供的 MP4 文件。
+- Vercel：[maqinglin-portfolio.vercel.app](https://maqinglin-portfolio.vercel.app)
+- Cloudflare：[maqinglin-portfolio.pages.dev](https://maqinglin-portfolio.pages.dev)
+
+两个地址均对应当前 GitHub `main` 分支中的新版作品集；若浏览器仍显示旧画面，请强制刷新或使用无痕窗口重新打开。
+
+基于 React + Vite 搭建的个人作品集。首页包含独立图素重构封面、七入口作品目录、简介、能力与暗色收尾页；六个项目和动效作品集均拥有独立地址。项目名称、内容与图片顺序来自简历、高清作品集 PDF、HMI 仪表作品集与单独提供的高清项目素材，站内动效使用提供的 MP4/GIF 文件。
 
 ## 本地运行
 
@@ -44,14 +49,15 @@ pnpm preview
 - `/project/rideshare`：顺风车 APP 迭代升级
 - `/project/property`：B 端物业管理系统
 - `/project/campaign`：C 端运营活动 H5
-- `/project/visual`：九号主题商城体验优化与核心产品 UI 迭代
+- `/project/hmi`：HMI 仪表页面设计
+- `/project/visual`：视觉设计
 - `/motion`：动效作品集
 
 项目页顶部和底部都提供返回作品目录入口。由首页进入详情时，浏览器后退也会恢复原目录位置。
 
 ## 当前版本
 
-当前仓库对应最终优化版：桌面与移动端均已完成响应式校正，首页、作品目录、关于、设计能力与联系方式采用连续滚动结构；五个项目与动效作品集保留独立入口。非动效项目图片保持静态阅读，动效作品继续使用进入视口播放与静音循环。
+当前仓库对应 2026-08-23 更新版：桌面与移动端均已完成响应式校正，首页、作品目录、关于、设计能力与联系方式采用连续滚动结构；六个项目与动效作品集保留独立入口。新增 HMI 仪表项目与视觉设计素材，非动效项目图片保持静态阅读，动效作品继续使用进入视口播放与静音循环。
 
 ## 公网部署
 
